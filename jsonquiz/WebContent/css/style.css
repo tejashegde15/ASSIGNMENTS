@@ -1,0 +1,118 @@
+body{
+       padding: 10px;
+    border: 5px solid white;
+    margin: 0;
+    font-family: impact ;
+}
+
+#top{
+	display : none;
+	background-color: #da981d;
+}
+
+#topbutton{
+	position: relative;
+	height: 50px;
+	width: 400px;
+	top: 180px;
+	left: 480px;
+	font-size: 20px;
+	font-family: "Comic Sans MS";
+	background-color: #da981d;
+	border-radius: 10px;
+}
+
+#topbutton:hover{
+	position: relative;
+	height: 50px;
+	width: 400px;
+	top: 180px;
+	left: 480px;
+	font-size: 20px;
+	font-family: "Comic Sans MS";
+	background-color: #ba883d;
+	padding : 0;
+	color : white;
+	border-radius: 10px;
+}
+
+
+.Box {
+       width:auto;
+       height: 350px;
+       background-image: linear-gradient(#9c7b5a,#cab32d);
+       padding: 10%;
+}
+.QBox{
+           background: white;
+    height: 350px;
+    padding: 20px;
+    /* border-right: 2px solid; */
+    /* border-bottom: 2px solid; */
+    -webkit-box-shadow: 1px 1px 3px;
+}
+.Box .QBox a{
+       text-decoration: none;
+}
+.Box .QBox p#Q1{
+       font-size: 25px;
+       margin: 10px 0px;
+       
+}
+.Box .QBox #Para{
+       font-size: 20px;
+       margin: 5px 0px;
+       
+}
+
+.option{
+	       position: relative;
+    left: 24px;
+    top: -10px;
+    font-size: 18px;
+    /* margin: 0px; */
+    margin-bottom: -15px;
+    margin-top: -12px;
+}
+
+
+
+.Box .QBox button#first{
+           float: right;
+    position: relative;
+    top: -44px;
+    color: white;
+    background-color: #9b9bce;
+    border-radius: 4px;
+    width: 72px;
+    height: 38px;
+    font-family: "Lucida Sans Unicode";
+}
+
+#submit{
+	position: relative;
+    top: 20px;
+    left: 24px;
+    width: 110px;
+    height: 30px;
+    color: white;
+    background-color: #9b9bce;
+    border-radius: 4px;
+    font-family: "Lucida Sans Unicode";
+}
+
+#rw{
+	text-decoration: underline;
+	text-decoration-color: blue;
+}
+
+#Trivia{
+	font-size: 20px;
+}
+
+#submit:hover {
+	background-color: #88b5e1;
+}
+.Box .QBox button#first:hover {
+	background-color: #88b5e1;
+}

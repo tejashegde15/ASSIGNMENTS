@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Quiz Time</title>
+<script type="text/javascript" src="data.json"> </script>
+<script type="text/javascript" src="./js/testjs.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<button id="topbutton" onclick="removetop()">Take the quiz!</button>
+<div id="top">
+<section class="Box">
+<div class="QBox">
+<p id="Q1">Question  </p><button id="first" class= "button" onclick="next()">Next</button>
+<p id="Para">Where is the highest waterfalls located in a planet called Earth?</p><br/>
+<div id="opt">
+<input type="radio" name="option1" id="opti1" value="1" onclick="submit()"><h5 id="opt1" class="option">Iguazo</h5><br/>
+<input type="radio" name="option1" id="opti2" value="2" onclick="submit()"><h5 id="opt2" class="option">Yosemite</h5><br/>
+<input type="radio" name="option1" id="opti3" value="3" onclick="submit()"><h5 id="opt3" class="option">Canada</h5><br/>
+<input type="radio" name="option1" id="opti4" value="4" onclick="submit()"><h5 id="opt4" class="option">Venezuela</h5><br/>
+<p id="score" style="display:none"></p>
+<div id="postclick">
+<h4 id="rw"></h4>
+<p id="Trivia"></p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</body>
+</html>
