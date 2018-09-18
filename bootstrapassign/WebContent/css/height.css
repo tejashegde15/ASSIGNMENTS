@@ -1,0 +1,58 @@
+.columnch
+{
+	height: 170px;
+	background-color: black;
+	color:white;
+
+	
+}
+.rowch
+{
+	height:170px;
+	border: black;
+	background-color: black;
+    text-align: center;
+}
+.list
+{
+	font-family: serif;
+	font-weight: bolder;
+	color: white;
+}
+.list1
+{
+	font-family: serif;
+	font-weight: normal;
+	color: black;
+}
+.list2
+{
+	font-family: serif;
+	font-weight: normal;
+	color: black;
+}
+
+.bheader
+{
+	height: 25px;
+	background-color:black;
+	color: white;
+	padding-left:290px;
+	font-family: fantasy;
+}
+
+.dot {
+    height: 75px;
+    width: 75px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#demo
+{
+	background-color: white;
+	border:1px solid black;
+	height:10px;
+	weight:10px;
+}
