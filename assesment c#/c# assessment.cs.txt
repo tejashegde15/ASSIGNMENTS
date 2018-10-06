@@ -1,0 +1,162 @@
+using System;
+using System.IO;
+
+namespace examples
+{
+	class  Employee
+	{
+		protected string name;
+		protected int  eid;
+		protected string elocation;
+		protected int percentAchieved;
+		
+		public Employee(string name,int eid,string elocation)
+		{
+			this.name=name;
+			this.eid=eid;
+			this.elocation=elocation;
+		}
+	}
+	class TechnicalEmployee:Employee
+	{
+		int billableAmt;
+		int techUpgrades;
+		int certificationsdone;
+		
+		
+		public TechnicalEmployee(string name,int eid,string elocation,int billableAmt,int techUpgrades,int certificationsdone):base(name,eid,elocation)
+		{
+			this.billableAmt=billableAmt;
+			this.techUpgrades=techUpgrades;
+			this.certificationsdone=certificationsdone;
+		}
+		 public int billableCheck()
+		{
+			if(this.billableAmt>2000)
+			{
+				this.percentAchieved=60;
+				return this.percentAchieved;
+			}
+			else
+			{
+				this.percentAchieved=((this.billableAmt*100)/2000);
+				this.percentAchieved=((this.percentAchieved*60)/100);
+				//Console.WriteLine("the percentAchieved is "+this.percentAchieved);
+				return this.percentAchieved;
+			}
+		}		
+		public int techUpgradesfun(int percentnew)
+		{
+			if(this.techUpgrades>2)
+			{
+				percentnew=percentnew+10;
+				
+				 return percentnew;
+			}
+			else if(this.techUpgrades==2)
+			{
+			    percentnew=percentnew+6;
+				Console.WriteLine("the percentAchieved is "+percentnew);
+				 return percentnew;
+			}
+			else if(this.techUpgrades==1)
+			{
+			    percentnew=percentnew+3;
+				
+				 return percentnew;
+			}
+			else
+			{
+				 return percentnew;
+			}
+		}
+		
+		public int rateAchievment(int percentr)
+		{
+			    int rateOfAchievment;
+		      	rateOfAchievment=((percentr*10)/100);
+				return rateOfAchievment;
+			
+			
+		}
+		public void grade(int gradenum)
+		{
+			if(gradenum>80)
+			{
+				Console.WriteLine("outstanding");
+			}
+			else if(gradenum>60 && gradenum<80)
+			{
+				Console.WriteLine("good");
+			}
+			else if(gradenum>40 &&gradenum<60)
+			{
+				Console.WriteLine("average");
+			}
+			else
+			{
+				Console.WriteLine("poor");
+			}
+	}
+	
+			public int certifications(int percentA)
+			{
+				if(this.certificationsdone==1)
+				{
+					Console.WriteLine(percentA+10);
+					return (percentA+10);
+					
+				}
+				else
+					
+					return percentA;
+	       }
+	}
+	
+	class MarketEmployee:TechnicalEmployee
+	{
+		int targetsales;
+		int percentAchieved;
+		MarketEmployee(string name,int eid,string elocation,int targetsales):base(name,eid,elocation)
+		{
+		  this.targetsales=targetsales;
+		
+		}
+		 public int TargetSales()
+		{
+			if(this.targetsales>2000)
+			{
+				this.percentAchieved=100;
+				return this.percentAchieved;
+			}
+			else
+			{
+				this.percentAchieved=((this.billableAmt*100)/2000);
+				//Console.WriteLine("the percentAchieved is "+this.percentAchieved);
+				return this.percentAchieved;
+			}
+		}		
+		
+		
+		/***override employee rateOfAchievment and grade*/
+	}
+	class Manager
+	{
+		static void Main()
+		{
+		    TechnicalEmployee t=new TechnicalEmployee("tejas",12,"dandeli",1000,2,1);
+			MarketEmployee m=new MarketEmployee("
+			int per;
+			int per1;
+			int per2;
+			per=t.billableCheck();
+			per1=t.techUpgradesfun(per);
+			per2=t.certifications(per1);
+			t.grade(per2);
+		   
+		
+
+    }
+}
+
+}
