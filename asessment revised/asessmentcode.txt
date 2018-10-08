@@ -1,0 +1,288 @@
+using System;
+using System.IO;
+
+namespace examples
+{
+	interface iEmployee
+	{
+	    void grade();	
+		
+	    void percentileCalc();
+		
+		
+		
+	}
+	class Employee
+	{
+		protected string name;
+		protected int eid;
+		protected string elocation;
+		protected float percentile;
+		public int percentAchieved;
+		public Employee(string name,int eid,string elocation)
+		{
+			this.name=name;
+			this.eid=eid;
+			this.elocation=elocation;
+		}
+	}
+	class TechnicalEmployee:Employee,iEmployee
+	{
+		public int billableAmt;
+		public int certificationsDone;
+		public int techUpgrades;
+		//public int percentAchieved;
+		
+		public TechnicalEmployee(string name,int eid,string elocation):base(name,eid,elocation)
+		{
+			
+		}
+		
+		public void billableCheck()
+		{
+			if(this.billableAmt>2000)
+			{
+				this.percentAchieved=60;
+				
+			}
+			else
+			{
+				this.percentAchieved=((this.billableAmt*100)/2000);
+				this.percentAchieved=((this.percentAchieved*60)/100);
+			//	Console.WriteLine("the percentAchieved is "+this.percentAchieved);
+				
+			}
+		
+		}
+		public void techUpgradesfun()
+		{
+			if(this.techUpgrades>2)
+			{
+				this.percentAchieved=this.percentAchieved+30;
+				
+				
+			}
+			else if(this.techUpgrades==2)
+			{
+			    this.percentAchieved=this.percentAchieved+6;
+				//Console.WriteLine("the percentAchieved is "+this.percentAchieved);
+				 
+			}
+			else if(this.techUpgrades==1)
+			{
+			    this.percentAchieved=this.percentAchieved+3;
+				//Console.WriteLine("the percentAchieved is "+this.percentAchieved);
+				 
+			}
+			else
+			{
+				Console.WriteLine("Tech upgrades cannot be this number");
+			}
+		}
+		public void certifications()
+			{
+				if(this.certificationsDone==1)
+				{
+					//Console.WriteLine(this.percentAchieved+10);
+					this.percentAchieved=this.percentAchieved+10;
+					
+				}
+				else
+					
+					this.percentAchieved=this.percentAchieved;
+	       }
+		
+		public void grade()
+		{
+			if(this.percentAchieved>80)
+			{
+				Console.WriteLine("THE GRADE IS");
+				Console.WriteLine("********OUTSTANDING***********");
+			}
+			else if(this.percentAchieved>60 && this.percentAchieved<80)
+			{
+				Console.WriteLine("THE GRADE IS");
+				Console.WriteLine("********GOOD***********");
+			}
+			else if(this.percentAchieved>40 &&this.percentAchieved<60)
+			{
+				Console.WriteLine("THE GRADE IS");
+				Console.WriteLine("********AVERAGE***********");
+			}
+			else
+			{
+				Console.WriteLine("THE GRADE IS");
+				Console.WriteLine("********POOR***********");
+			}
+		}
+		public void percentileCalc()
+		{
+			this.percentile=Convert.ToSingle(this.percentAchieved/10);
+			Console.WriteLine("THE PERCENTILE OBTAINED IS");
+			Console.WriteLine(this.percentile);
+		}
+			
+		
+	}	
+	class MarketingEmployee:Employee,iEmployee
+	{
+	  public int targetsales;
+	  
+	  
+		public MarketingEmployee(string name,int eid,string elocation):base(name,eid,elocation)
+		{
+			
+		}
+		
+	  public void targetsalescheck()
+		{
+			if(this.targetsales>2000)
+			{
+				this.percentAchieved=100;
+				
+			}
+			else
+			{
+				this.percentAchieved=((this.targetsales*100)/2000);
+				
+			  //  Console.WriteLine("the percentAchieved is "+this.percentAchieved);
+				
+			}
+		
+		}
+			
+		
+		public void grade()
+		{
+			if(this.percentAchieved>80)
+			{
+				Console.WriteLine("THE GRADE IS");
+				Console.WriteLine("********OUTSTANDING***********");
+			}
+			else if(this.percentAchieved>60 && this.percentAchieved<80)
+			{
+				Console.WriteLine("THE GRADE IS");
+				Console.WriteLine("********GOOD***********");
+			}
+			else if(this.percentAchieved>40 &&this.percentAchieved<60)
+			{
+				Console.WriteLine("THE GRADE IS");
+				Console.WriteLine("********AVERAGE***********");
+			}
+			else
+			{
+				Console.WriteLine("THE GRADE IS");
+				Console.WriteLine("********POOR***********");
+			}
+			
+			
+			
+		}
+		
+		public void percentileCalc()
+		{
+			this.percentile=Convert.ToSingle(this.percentAchieved/10);	
+			Console.WriteLine("THE PERCENTILE OBTAINED IS");
+			Console.WriteLine(this.percentile);
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+    /***override employee rateOfAchievment and grade*/
+	class Manager
+	{
+		static void Main()
+		{
+			int counter=0;
+			int taverage=0;
+			int maverage=0;
+			int mydec;
+			
+		   TechnicalEmployee t=new TechnicalEmployee("tejas",12,"dandeli");
+		   Console.WriteLine("*****************QUARTERLY PERFORMANCE REVIEW********************************");
+		      Console.WriteLine();
+			  Console.WriteLine();
+		 //  Console.WriteLine("Please enter the billable amount of the technical employee");
+			 Console.WriteLine("HELLO MANAGERS WELCOME TO THE PERFORMANCE DESK");
+			  Console.WriteLine();
+decison:			   Console.WriteLine("CHOOSE WHOM TO EVALUATE");
+			    Console.WriteLine();
+				 Console.WriteLine("1) TECHNICAL");
+				  Console.WriteLine("2) MARKETING");
+				  mydec=Int32.Parse(Console.ReadLine());
+				  if(mydec==1)
+				  {
+					  goto technical;
+				  }
+				  else if(mydec==2)
+				  {
+					  goto marketing;
+				  }
+				  else
+				  {
+					  Console.WriteLine("Make the right decision");
+				  }
+technical:
+		 while(counter<3)
+		  {
+		   Console.WriteLine("************DETAILS OF THE TECHNICAL EMPLOYEE OF {0} MONTH*****************",counter+1);
+		   Console.WriteLine();
+		   Console.WriteLine("Please enter the billable amount of the technical employee of the {0} month",counter+1);
+		   t.billableAmt=Int32.Parse(Console.ReadLine());
+		   t.billableCheck();
+		    Console.WriteLine();
+		    Console.WriteLine("Please enter the technological upgrades of the technical employee of the {0} month",counter+1);
+		   t.techUpgrades=Int32.Parse(Console.ReadLine());
+		   t.techUpgradesfun();
+		    Console.WriteLine();
+		   Console.WriteLine("Please enter the certifications of the technical employee of the {0} month",counter+1);
+		   t.certificationsDone=Int32.Parse(Console.ReadLine());
+		   t.certifications();
+		   //Console.WriteLine("the the percent achieved"+t.percentAchieved);
+		   taverage+=t.percentAchieved;
+		   counter++;
+		  }
+		   taverage=taverage/3;
+		   //Console.WriteLine("average is "+taverage);
+		   t.percentAchieved=taverage;
+		   Console.WriteLine();
+		   Console.WriteLine();
+		   t.grade();
+		   t.percentileCalc();
+           counter=0;
+		   goto decison;
+marketing:          
+		  MarketingEmployee m=new MarketingEmployee("shreyas",21,"dandeli");
+		   while(counter<3)
+		   {
+		   Console.WriteLine("************DETAILS OF THE MARKETING EMPLOYEE OF {0} MONTH*****************",counter+1);
+		   Console.WriteLine("Please enter the billable amount of the marketing employee of the {0} month",counter+1);
+		   m.targetsales=Int32.Parse(Console.ReadLine());
+		   m.targetsalescheck();
+		   maverage=maverage+m.percentAchieved;
+		   counter++;
+		   Console.WriteLine();
+		   }
+		   maverage=maverage/3;
+		   //Console.WriteLine("average is "+maverage);
+		   t.percentAchieved=maverage;
+		   Console.WriteLine();
+		   Console.WriteLine();
+		   m.grade();
+		   m.percentileCalc();
+		
+
+    }
+}
+
+}
+
+**************************************************
+
+
